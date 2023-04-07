@@ -5,11 +5,13 @@ import { Transition } from "d3-transition";
 const selection = select("body");
 
 // using a selection works
+const attrStrSelecetion: string = selection.attr("foo");
 const updatedSelection = selection.attr("foo", "bar").style("color", "red");
 
 const transition = selection.transition();
 
 // using a transition works
+const attrStrTransition: string = transition.attr("foo");
 const updatedTransition = transition.attr("foo", "bar").style("color", "red");
 
 // In any scenario where they can return either a selection or a transition,
@@ -19,6 +21,7 @@ function usingUnion(
     | Selection<BaseType, any, BaseType, any>
     | Transition<BaseType, any, BaseType, any>
 ) {
+  let str: string = selectionOrTransition.attr("foo");
   return selectionOrTransition
     .attr("foo", "bar")
     .style("color", "red")
@@ -28,6 +31,7 @@ function usingUnion(
 function selOrTra(
   selectionOrTransition: SelectionOrTransition<BaseType, any, BaseType, any>
 ) {
+  let str: string = selectionOrTransition.attr("foo");
   return selectionOrTransition
     .attr("foo", "bar")
     .style("color", "red")
