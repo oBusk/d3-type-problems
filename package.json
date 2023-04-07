@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/d3-selection": "3.0.0",
+    "@types/d3-selection": "3.0.5",
     "@types/d3-transition": "3.0.3",
     "typescript": "^5.0.3"
   },
